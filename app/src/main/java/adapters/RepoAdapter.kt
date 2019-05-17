@@ -19,7 +19,10 @@ class RepoAdapter(var repos:List<GithubRepo>): RecyclerView.Adapter<RepoAdapter.
         return repos.size
     }
 
-    fun updateList
+    fun updateList(newRepos:List<GithubRepo>){
+        this.repos= newRepos
+        notifyDataSetChanged()
+    }
 
     override fun onBindViewHolder(holder: RepoAdapter.ViewHolder, position: Int) {
         holder.bind(repos[position])
